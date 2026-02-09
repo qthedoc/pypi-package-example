@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["pypi_package_example*"]
+include = ["pypi_package_example_qthedoc*"]
 
 [project]
 name = 'pypi-package-example-qthedoc'
