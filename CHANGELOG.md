@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2](https://github.com/qthedoc/pypi-package-example/compare/v0.1.1...v0.1.2) (2026-02-09)
+
+
+### Bug Fixes
+
+* publish triggers on tags ([bef9c09](https://github.com/qthedoc/pypi-package-example/commit/bef9c09b84d424dd9481c1ab9537239982bb7112))
+* publish triggers on tags ([228c28e](https://github.com/qthedoc/pypi-package-example/commit/228c28e10cfd92e1f1325f3edf5d775270a79100))
+
 ## [0.1.1](https://github.com/qthedoc/pypi-package-example/compare/v0.1.0...v0.1.1) (2026-02-09)
 
 
