@@ -9,6 +9,7 @@
 * publish triggers on tags ([228c28e](https://github.com/qthedoc/pypi-package-example/commit/228c28e10cfd92e1f1325f3edf5d775270a79100))
 * test fix ([d3b4bd8](https://github.com/qthedoc/pypi-package-example/commit/d3b4bd8f07acdf6ebe1ee33778a603a1d760b866))
 * test fix ([d601e95](https://github.com/qthedoc/pypi-package-example/commit/d601e95313ca14c344199498b8f81d7de4d9b3ba))
+* removed pushes to main triggering releases
 
 ## [0.1.1](https://github.com/qthedoc/pypi-package-example/compare/v0.1.0...v0.1.1) (2026-02-09)
 
