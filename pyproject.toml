@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools >= 61", "setuptools-scm >= 8"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
@@ -7,14 +7,14 @@ where = ["src"]
 include = ["pypi_package_example*"]
 
 [project]
-name = 'pypi-package-example'
-version = "0.1.0"
-requires-python = ">=3.10"
-authors = [{ name = "Quinn Marsh", email = "quinnmarsh@hotmail.com" }]
-maintainers = [{ name = "Quinn Marsh", email = "quinnmarsh@hotmail.com" }]
+name = 'pypi-package-example-qthedoc'
+dynamic = ["version"]
 description = "Testing PyPI CI"
 readme = "README.md"
+requires-python = ">=3.10"
 license = {text = "MIT License"}
+authors = [{ name = "Quinn Marsh", email = "quinnmarsh@hotmail.com" }]
+maintainers = [{ name = "Quinn Marsh", email = "quinnmarsh@hotmail.com" }]
 keywords = [
   "pypi", "ci"
 ]
@@ -34,15 +34,10 @@ dependencies = []
 test = [
   'pytest',
 ]
-publish = [
-  'build',
-  'twine'
-]
 
 [project.urls]
 Homepage = "https://github.com/qthedoc/pypi-package-example"
 Repository = "https://github.com/qthedoc/pypi-package-example"
 Issues = "https://github.com/qthedoc/pypi-package-example/issues"
 "Say Thanks!" = "http://quinnmarsh.com"
-
 
