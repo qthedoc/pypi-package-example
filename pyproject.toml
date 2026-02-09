@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pypi_package_example*"]
+
+[project]
+name = 'pypi-package-example'
+version = "0.1.0"
+requires-python = ">=3.10"
+authors = [{ name = "Quinn Marsh", email = "quinnmarsh@hotmail.com" }]
+maintainers = [{ name = "Quinn Marsh", email = "quinnmarsh@hotmail.com" }]
+description = "Testing PyPI CI"
+readme = "README.md"
+license = {text = "MIT License"}
+keywords = [
+  "pypi", "ci"
+]
+classifiers =[
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+  'pytest',
+]
+publish = [
+  'build',
+  'twine'
+]
+
+[project.urls]
+Homepage = "https://github.com/qthedoc/pypi-package-example"
+Repository = "https://github.com/qthedoc/pypi-package-example"
+Issues = "https://github.com/qthedoc/pypi-package-example/issues"
+"Say Thanks!" = "http://quinnmarsh.com"
+
+
