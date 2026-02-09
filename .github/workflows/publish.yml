@@ -1,8 +1,11 @@
 name: Publish to PyPI
 
 on:
-  release:
-    types: [created]               # triggers when release-please creates the GitHub release
+  # release:
+  #   types: [created]               # triggers when release-please creates the GitHub release
+  push:
+    branches: [main]               # optional: also run on direct pushes to main (not recommended)
+    tags: ['v*']                   # optional: also run when pushing tags like v1.2.3 (not recommended)
 
 permissions:
   contents: read
@@ -31,4 +34,5 @@ jobs:
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        # no secrets needed with Trusted Publishing!
+        with:
+          repository-url: https://test.pypi.org/legacy/  # remove this line to publish to real PyPI

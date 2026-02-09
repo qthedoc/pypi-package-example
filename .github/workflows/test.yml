@@ -1,5 +1,5 @@
 # .github/workflows/ci.yml   ← add this in your PR
-name: CI
+name: Test
 
 on:
   pull_request:
@@ -10,6 +10,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    # Skip push events that are from merged PRs (they already ran as pull_request)
+    if: github.event_name == 'pull_request' || github.event_name == 'push' && !github.event.pull_request
 
     steps:
     - uses: actions/checkout@v3
