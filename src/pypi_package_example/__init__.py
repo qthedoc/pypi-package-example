@@ -1,3 +1,4 @@
 from pypi_package_example.main import answer_to_life
 
+__version__ = "0.1.0"
 __all__ = ["answer_to_life"]
