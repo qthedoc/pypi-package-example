@@ -1,10 +1,10 @@
 name: Publish to PyPI
 
 on:
-  # release:
-  #   types: [created]               # triggers when release-please creates the GitHub release
-  push:
-    tags: ['v*.*.*']                   # optional: also run when pushing tags like v1.2.3 (not recommended)
+  release:
+    types: [created]               # triggers when release-please creates the GitHub release
+  # push:
+  #   tags: ['v*.*.*']                   # optional: also run when pushing tags like v1.2.3 (not recommended)
 
 permissions:
   contents: read
