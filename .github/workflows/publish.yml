@@ -16,20 +16,32 @@ jobs:
     environment: testpypi
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Download release archive
+        uses: actions/download-artifact@v6
         with:
-          fetch-depth: 0             # needed if using setuptools_scm
+          name: python-package-distribution
+          path: dist/
+      # - uses: actions/checkout@v4
+      #   with:
+      #     fetch-depth: 0             # needed if using setuptools_scm
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
+      # - name: Set up Python
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.x'
 
-      - name: Install build tools
-        run: python -m pip install --upgrade build
+      # - name: Install build tools
+      #   run: python -m pip install --upgrade build
 
-      - name: Build package
-        run: python -m build
+      # - name: Debug git state
+      #   run: |
+      #     git fetch --tags --force
+      #     git describe --tags --exact-match || echo "No exact tag match"
+      #     git tag -l -n
+      #     python -m setuptools_scm || echo "scm failed"
+
+      # - name: Build package
+      #   run: python -m build
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
