@@ -13,3 +13,6 @@ Testing a simple Python package for PyPI distribution with GitHub Actions CI.
     - can be pip installed manually but this is almost never done unless debugging
     - note on editable installs: the version you get when running importlib.metadata.version("pypi-package-example") is frozen at the time of installation, so if you want to see changes to the version you must reinstall the package (pip install -e .) after making changes to the git state (commits, tags).
 - GitHub Actions are set up to run tests on push and to publish to TestPyPI on release.
+
+
+update
