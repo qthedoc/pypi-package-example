@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.4](https://github.com/qthedoc/pypi-package-example/compare/v0.2.3...v0.2.4) (2026-02-10)
+
+
+### Bug Fixes
+
+* use og token ([574b095](https://github.com/qthedoc/pypi-package-example/commit/574b09512a4795eeeb473280dfbe5191648ec696))
+* use og token ([ecee678](https://github.com/qthedoc/pypi-package-example/commit/ecee6787c0dc9ba42d3a351dc9c5192aea9b7647))
+
 ## [0.2.3](https://github.com/qthedoc/pypi-package-example/compare/v0.2.2...v0.2.3) (2026-02-10)
 
 
