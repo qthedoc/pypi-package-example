@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/qthedoc/pypi-package-example/compare/v0.2.1...v0.2.2) (2026-02-10)
+
+
+### Bug Fixes
+
+* now we get workflow outputs ([fe90a01](https://github.com/qthedoc/pypi-package-example/commit/fe90a01fa09a45c517dce6fab67f75628bad9fbd))
+* now we get workflow outputs ([1969135](https://github.com/qthedoc/pypi-package-example/commit/19691357320a18bb392821b644f6bfb7f03c58f7))
+
 ## [0.2.1](https://github.com/qthedoc/pypi-package-example/compare/v0.2.0...v0.2.1) (2026-02-10)
 
 
