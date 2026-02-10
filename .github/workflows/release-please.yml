@@ -24,12 +24,12 @@ jobs:
 
   build:
     needs: release-please
-    # if: ${{ needs.release-please.outputs.release-created == 'true' }}
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ needs.release-please.outputs.tag-name }}
+          ref: ${{ needs.release-please.outputs.tag_name }}
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
@@ -44,7 +44,7 @@ jobs:
       - name: Upload distribution files to release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ needs.release-please.outputs.tag-name }}
+          tag_name: ${{ needs.release-please.outputs.tag_name }}
           files: dist/*
 
       # Save for publish job
