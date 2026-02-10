@@ -1,4 +1,4 @@
-name: Release Please
+name: Release Please + Build + Publish
 
 on:
   push:
@@ -8,13 +8,14 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write        # for trusted publishing
 
 jobs:
   release-please:
     runs-on: ubuntu-latest
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
-      tag_name: ${{ steps.release.outputs.tag_name }}
+      tag_name:        ${{ steps.release.outputs.tag_name }}
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
@@ -22,10 +23,8 @@ jobs:
           token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
-          # package-name: your-package-name   # optional, if repo name != package name
-          # changelog-types: ...               # customize if you want non-standard types
 
-  build-and-attach:
+  build:
     needs: release-please
     if: ${{ needs.release-please.outputs.release_created == 'true' }}
     runs-on: ubuntu-latest
@@ -43,16 +42,36 @@ jobs:
 
       - run: python -m build
 
-      # Optional: attach files to the GitHub Release
       - name: Upload distribution files to release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.release-please.outputs.tag_name }}
           files: dist/*
 
-      # Save for publish job
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v4
         with:
           name: python-dist
           path: dist/*
           retention-days: 1
+
+  publish:
+    needs: build                      # ← key: waits for build to finish
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}   # or needs.build.result == 'success'
+    runs-on: ubuntu-latest
+    environment: testpypi
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: python-dist
+          path: dist/
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Publish to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          # username: __token__
+          # password: ${{ secrets.TEST_PYPI_API_TOKEN }}   # or use trusted publishing with id-token
