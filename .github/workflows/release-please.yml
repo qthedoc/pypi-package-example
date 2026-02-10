@@ -25,10 +25,14 @@ jobs:
           # package-name: your-package-name   # optional, if repo name != package name
           # changelog-types: ...               # customize if you want non-standard types
 
-  build-and-attach:
+  build-and-publish:
     needs: release-please
     if: ${{ needs.release-please.outputs.release_created == 'true' }}
     runs-on: ubuntu-latest
+    environment: testpypi
+    permissions:
+      id-token: write        # for trusted publishing
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,20 +43,19 @@ jobs:
         with:
           python-version: '3.x'
 
-      - run: python -m pip install --upgrade build
+      - name: Install build tool
+        run: python -m pip install --upgrade build
 
-      - run: python -m build
+      - name: Build distribution files
+        run: python -m build
 
-      # Optional: attach files to the GitHub Release
       - name: Upload distribution files to release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.release-please.outputs.tag_name }}
           files: dist/*
 
-      # Save for publish job
-      - uses: actions/upload-artifact@v5
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          name: python-dist
-          path: dist/*
-          retention-days: 1
+          repository-url: https://test.pypi.org/legacy/  # remove this line to publish to real PyPI
