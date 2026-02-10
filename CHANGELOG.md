@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.5](https://github.com/qthedoc/pypi-package-example/compare/v0.2.4...v0.2.5) (2026-02-10)
+
+
+### Bug Fixes
+
+* pub-own job ([41f9953](https://github.com/qthedoc/pypi-package-example/commit/41f9953095e5ebf6c38d28b58604bcae29cdac21))
+* pub-own job ([8f831d1](https://github.com/qthedoc/pypi-package-example/commit/8f831d135870554fe0b49574d970e2ceb09ce4d2))
+
 ## [0.2.4](https://github.com/qthedoc/pypi-package-example/compare/v0.2.3...v0.2.4) (2026-02-10)
 
 
