@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/qthedoc/pypi-package-example/compare/v0.2.0...v0.2.1) (2026-02-10)
+
+
+### Bug Fixes
+
+* defined the flags ([f455f4b](https://github.com/qthedoc/pypi-package-example/commit/f455f4b3641935310178194dddeb7528e6c0dba7))
+* defined the flags ([6b605ef](https://github.com/qthedoc/pypi-package-example/commit/6b605ef5243d3908b6c1d53b2c4d88d8c3b3f259))
+
 ## [0.2.0](https://github.com/qthedoc/pypi-package-example/compare/v0.1.7...v0.2.0) (2026-02-10)
 
 
