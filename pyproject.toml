@@ -41,3 +41,29 @@ Repository = "https://github.com/qthedoc/pypi-package-example"
 Issues = "https://github.com/qthedoc/pypi-package-example/issues"
 "Say Thanks!" = "http://quinnmarsh.com"
 
+# ==================== bump-my-version config ====================
+[tool.bumpversion]
+current_version = "0.1.7"          # ← update this to your current version
+commit = true
+tag = true
+tag_name = "v{new_version}"
+message = "Release v{new_version}"
+
+# Files to update version in
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = 'version = "{current_version}"'
+replace = 'version = "{new_version}"'
+
+[[tool.bumpversion.files]]
+filename = "src/pypi_package_example/__init__.py"
+search = '__version__ = "{current_version}"'
+replace = '__version__ = "{new_version}"'
+
+# Optional: also update changelog (basic template)
+[[tool.bumpversion.files]]
+filename = "CHANGELOG.md"
+search = "## Unreleased"
+replace = """## Unreleased
+
+## {new_version} - {now:%Y-%m-%d}"""
