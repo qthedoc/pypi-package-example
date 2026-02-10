@@ -60,10 +60,5 @@ filename = "src/pypi_package_example_qthedoc/__init__.py"
 search = '__version__ = "{current_version}"'
 replace = '__version__ = "{new_version}"'
 
-# Optional: also update changelog (basic template)
-[[tool.bumpversion.files]]
-filename = "CHANGELOG.md"
-search = "## Unreleased"
-replace = """## Unreleased
 
 ## {new_version} - {now:%Y-%m-%d}"""
