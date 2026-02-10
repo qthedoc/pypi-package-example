@@ -59,6 +59,13 @@ jobs:
           tag_name: ${{ needs.release-please.outputs.tag_name }}
           files: dist/*
 
+      - name: Upload artifacts for publish
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-dist
+          path: dist/*
+          retention-days: 1
+
   publish:
     needs: build
     runs-on: ubuntu-latest
@@ -67,6 +74,12 @@ jobs:
       id-token: write        # for trusted publishing
 
     steps:
+      - name: Download built distributions
+        uses: actions/download-artifact@v4
+        with:
+          name: python-dist
+          path: dist/
+          
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
