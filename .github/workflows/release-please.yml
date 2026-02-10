@@ -11,6 +11,11 @@ permissions:
 
 jobs:
   release-please:
+    # no one ever told me this about release-please so I will leave it here:
+    # release-please runs in one of two states:
+    # 1. "changes detected on main branch -> create a release PR with bumped version and changelog"
+    # 2. "release PR was merged -> create a release and tag on GitHub"
+    #     - you can use the outputs of the release-please step to conditionally run other steps/jobs like building and publishing which should only run in state #2 (see the "build-and-publish" job below)
     runs-on: ubuntu-latest
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
