@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/qthedoc/pypi-package-example/compare/v0.1.7...v0.2.0) (2026-02-10)
+
+
+### Features
+
+* readme ([39568d7](https://github.com/qthedoc/pypi-package-example/commit/39568d7ebc1736d9ae32580e378e8e8ea9fe9487))
+
+
+### Bug Fixes
+
+* underscore!! ([896522e](https://github.com/qthedoc/pypi-package-example/commit/896522e279201c3d3622e597212185769022c102))
+
 ## [0.1.7](https://github.com/qthedoc/pypi-package-example/compare/v0.1.6...v0.1.7) (2026-02-10)
 
 
