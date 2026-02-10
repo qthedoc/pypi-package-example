@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.7](https://github.com/qthedoc/pypi-package-example/compare/v0.2.6...v0.2.7) (2026-02-10)
+
+
+### Bug Fixes
+
+* add scm section ([cbc2d9e](https://github.com/qthedoc/pypi-package-example/commit/cbc2d9e42ec49a1d8086ce404be9ebd1268bc517))
+* add scm section ([cbf8ad0](https://github.com/qthedoc/pypi-package-example/commit/cbf8ad023db5e7673034824f2980282d78f5f7b6))
+
 ## [0.2.6](https://github.com/qthedoc/pypi-package-example/compare/v0.2.5...v0.2.6) (2026-02-10)
 
 
