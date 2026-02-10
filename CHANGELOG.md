@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.6](https://github.com/qthedoc/pypi-package-example/compare/v0.1.5...v0.1.6) (2026-02-10)
+
+
+### Bug Fixes
+
+* test fix ([b1081e1](https://github.com/qthedoc/pypi-package-example/commit/b1081e1c52133385232ddb51142f09cd8e596dcc))
+* test fix ([8836110](https://github.com/qthedoc/pypi-package-example/commit/88361106141d7aa772fc58a3e434e9d271addb84))
+
 ## [0.1.5](https://github.com/qthedoc/pypi-package-example/compare/v0.1.4...v0.1.5) (2026-02-10)
 
 
