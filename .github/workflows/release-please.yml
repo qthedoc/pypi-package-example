@@ -1,22 +1,52 @@
 name: Release Please
 
 on:
+  pull_request:
+    branches: [main]           # only run for PRs targeting main
   push:
-    branches:
-      - main
+    branches: [main]           # optional: also run on direct pushes to main
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    # This condition prevents duplicate test runs when a PR is merged
+    # (the push from merge already ran tests as a PR)
+    if: >
+      github.event_name == 'pull_request' ||
+      (github.event_name == 'push' && !github.event.pull_request)
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # good for some test tools
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install .[test] # install the package with test dependencies
+
+      - name: Run tests
+        run: pytest tests
+
   release-please:
     # no one ever told me this about release-please so I will leave it here:
     # release-please runs in one of two states:
     # 1. "changes detected on main branch -> create a release PR with bumped version and changelog"
     # 2. "release PR was merged -> create a release and tag on GitHub"
     #     - you can use the outputs of the release-please step to conditionally run other steps/jobs like building and publishing which should only run in state #2 (see the "build-and-publish" job below)
+    
     runs-on: ubuntu-latest
+    
+    # Only run on direct pushes to main (never on PRs)
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}

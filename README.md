@@ -15,4 +15,4 @@ Testing a simple Python package for PyPI distribution with GitHub Actions CI.
 - GitHub Actions are set up to run tests on push and to publish to TestPyPI on release.
 
 
-update v0.2.4
+we got it
