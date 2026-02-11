@@ -16,3 +16,10 @@ Testing a simple Python package for PyPI distribution with GitHub Actions CI.
 
 
 we got it
+
+
+TODO:
+- clean this up so it can be a template for future packages
+    - better readme
+    - remove unnecessary files
+- test if tests fail
