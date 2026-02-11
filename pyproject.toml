@@ -42,3 +42,5 @@ Issues = "https://github.com/qthedoc/pypi-package-example/issues"
 "Say Thanks!" = "http://quinnmarsh.com"
 
 [tool.setuptools_scm]
+version_file = "src/pypi_package_example_qthedoc/_version.py" # create version file on build and install
+local_scheme = "no-local-version"

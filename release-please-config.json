@@ -3,13 +3,7 @@
   "packages": {
     ".": {
       "release-type": "python",
-      "changelog-path": "CHANGELOG.md",
-      "extra-files": [
-        {
-          "type": "generic",
-          "path": "src/pypi_package_example_qthedoc/__init__.py"
-        }
-      ]
+      "changelog-path": "CHANGELOG.md"
     }
   }
 }

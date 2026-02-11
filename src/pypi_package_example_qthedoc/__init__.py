@@ -1,4 +1,4 @@
-from pypi_package_example_qthedoc.main import answer_to_life
+from .main import answer_to_life
+from ._version import __version__
 
-__version__ = "0.2.7"
 __all__ = ["answer_to_life"]

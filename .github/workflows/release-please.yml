@@ -34,9 +34,6 @@ jobs:
     if: ${{ needs.release-please.outputs.release_created == 'true' }}
     runs-on: ubuntu-latest
 
-    outputs: # pipe the tag name from the release-please job to use in the publish job
-      tag_name: ${{ needs.release-please.outputs.tag_name }}
-
     steps:
       - uses: actions/checkout@v4
         with:
