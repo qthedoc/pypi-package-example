@@ -13,11 +13,6 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
-    # This condition prevents duplicate test runs when a PR is merged
-    # (the push from merge already ran tests as a PR)
-    # This hasn't been working for me, and an extra test run on merge isn't the end of the world, so I'm commenting it out for now, but ideally we would only run tests once per change (either on the PR or on the push after merge, but not both)
-    if: github.event_name == 'pull_request' || (github.event_name == 'push' && !github.event.pull_request)
-
     steps:
       - uses: actions/checkout@v4
         with:
