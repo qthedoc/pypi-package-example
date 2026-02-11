@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.8](https://github.com/qthedoc/pypi-package-example/compare/v0.2.7...v0.2.8) (2026-02-11)
+
+
+### Bug Fixes
+
+* testing dynamic versioning ([101655f](https://github.com/qthedoc/pypi-package-example/commit/101655f78566bda008ba47ba7472d2d2ab2066d5))
+* testing dynamic versioning ([fd59ea9](https://github.com/qthedoc/pypi-package-example/commit/fd59ea97419dbbed9d368b081d98133f82bdc092))
+
 ## [0.2.7](https://github.com/qthedoc/pypi-package-example/compare/v0.2.6...v0.2.7) (2026-02-10)
 
 
