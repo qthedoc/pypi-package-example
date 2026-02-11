@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.9](https://github.com/qthedoc/pypi-package-example/compare/v0.2.8...v0.2.9) (2026-02-11)
+
+
+### Bug Fixes
+
+* read me ([53572d4](https://github.com/qthedoc/pypi-package-example/commit/53572d419ada052311d77e081f39d38fca9c8aa5))
+
 ## [0.2.8](https://github.com/qthedoc/pypi-package-example/compare/v0.2.7...v0.2.8) (2026-02-11)
 
 
