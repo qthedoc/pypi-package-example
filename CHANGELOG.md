@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.11](https://github.com/qthedoc/pypi-package-example/compare/v0.2.10...v0.2.11) (2026-02-14)
+
+
+### Documentation
+
+* update README and workflow ([9a26b33](https://github.com/qthedoc/pypi-package-example/commit/9a26b33f7261f769898c95547046af4de57a44ae))
+
 ## [0.2.10](https://github.com/qthedoc/pypi-package-example/compare/v0.2.9...v0.2.10) (2026-02-11)
 
 
