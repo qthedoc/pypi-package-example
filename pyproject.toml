@@ -6,6 +6,10 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 include = ["pypi_package_example_qthedoc*"]
 
+[tool.setuptools_scm]
+version_file = "src/pypi_package_example_qthedoc/_version.py" # create version file on build and install
+local_scheme = "no-local-version"
+
 [project]
 name = 'pypi-package-example-qthedoc'
 dynamic = ["version"]
@@ -40,7 +44,3 @@ Homepage = "https://github.com/qthedoc/pypi-package-example"
 Repository = "https://github.com/qthedoc/pypi-package-example"
 Issues = "https://github.com/qthedoc/pypi-package-example/issues"
 "Say Thanks!" = "http://quinnmarsh.com"
-
-[tool.setuptools_scm]
-version_file = "src/pypi_package_example_qthedoc/_version.py" # create version file on build and install
-local_scheme = "no-local-version"

@@ -164,9 +164,9 @@ TODO:
 - rename to `understanding-python-packaging-qthedoc
 - other topics to cover
     - Running tests locally (taking care of the `_version.py`)
-        - `pip install .` local static install (this will generate the `_version.py`.)
-        - `pip install -e .` editable install. this will not generate the `_version.py` since an editable install si really just a symlink to your code
-        - even if you want an editable install, you should still do a static install at least once to generate the `_version.py` so that it quits complaining about the missing version file.
+        - `pip install .` local static install
+        - `pip install -e .` editable install
+        - both will generate the `_version.py` but the version info you get from each will be different. with editable install, the version info is frozen at the time of installation and won't change until you reinstall it, while with a static install, the version info will reflect the current git state whenever you import it.
     - Using your package locally
     - understanding editable vs static installs
 
